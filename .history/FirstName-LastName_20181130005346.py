@@ -241,9 +241,7 @@ param: list
 return: list
 '''
 def sort(numbers):
-    number_list = list(numbers)
-    lhalf = number_list[:len(number_list)//2]
-    uhalf = number_list[len(number_list)//2:]    
+    print()
 '''
 9. Create an implementation of the rotational cipher, also sometimes called
 the Caesar cipher.

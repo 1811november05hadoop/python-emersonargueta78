@@ -224,11 +224,29 @@ return: bool
 '''
 def pangram(sentence):
     sentence_list = set(sentence.lower())
-    
     subsetStr0 = {'.' , ' ' , ',' , ','}
     subsetStr = set('abcdefghijklmnopqrstuvwxyz')
+    print(sentence_list)
+    print(subsetStr)
+    print(subsetStr0)
+    print(sentence_list.difference(subsetStr0))
+    return sentence_list.difference(subsetStr0).__contains__(subsetStr)
+        
+    # string = string.replaceAll(regex, "");
+    # char characters[] = string.toCharArray();
+    # char subsetChars[] = subsetStr.toCharArray();
+
+    # HashSet<Character> chars = new HashSet<>();
+    # for (char c : characters) {
+    #     chars.add(Character.toLowerCase(c));
+    # }
+
+    # HashSet<Character> subset = new HashSet<>();
+    # for(char c : subsetChars){
+    #     subset.add(c);
+    # }
     
-    return subsetStr.issubset(sentence_list.difference(subsetStr0)) 
+    # return chars.containsAll(subset);
 '''
 8. Sort list of integers.
 f([2,4,5,1,3,1]) = [1,1,2,3,4,5]
@@ -241,9 +259,7 @@ param: list
 return: list
 '''
 def sort(numbers):
-    number_list = list(numbers)
-    lhalf = number_list[:len(number_list)//2]
-    uhalf = number_list[len(number_list)//2:]    
+    print()
 '''
 9. Create an implementation of the rotational cipher, also sometimes called
 the Caesar cipher.

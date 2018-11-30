@@ -43,10 +43,6 @@ def main():
     print(whichTriangle(1,2,3))
     print(whichTriangle(3,3,3))
     print(scrabble('cabbage'))
-    print(armstrong(153))
-    print(armstrong(154))
-    print(primeFactors(12))
-    print(pangram('The quick brown fox jumps over the lazy dog.'))
 
 '''
 1. Reverse a String. Example: reverse("example"); -> "elpmaxe"
@@ -180,12 +176,17 @@ def armstrong(number):
     numDigits = len(digit_list)
 
     for digit in digit_list:
-        sum += int(digit) ** numDigits
+        sum += digit 
+    for (char character : characters) {
 
-    if sum == number:
-        return True
+        sum += Math.pow(Character.getNumericValue(character), numDigits);
+    }
 
-    return False
+    if(sum == number){
+        return true;
+    }
+
+    return false;
 '''
 6. Compute the prime factors of a given natural number.
 
@@ -197,18 +198,7 @@ param: int
 return: list
 '''
 def primeFactors(number):
-    primeFactors = []
-
-    if number == 2:	
-        return list(number)
-    for i in range(2,number):
-        while(number%i == 0):
-            primeFactors.append(i)
-            number = number/i
-    if number > 2:
-        primeFactors.append(number)
-    
-    return primeFactors
+    print()
 '''
 7. Determine if a sentence is a pangram. A pangram (Greek: παν γράμμα, pan
 gramma, "every letter") is a sentence using every letter of the alphabet at
@@ -223,12 +213,7 @@ param: str
 return: bool
 '''
 def pangram(sentence):
-    sentence_list = set(sentence.lower())
-    
-    subsetStr0 = {'.' , ' ' , ',' , ','}
-    subsetStr = set('abcdefghijklmnopqrstuvwxyz')
-    
-    return subsetStr.issubset(sentence_list.difference(subsetStr0)) 
+    print()
 '''
 8. Sort list of integers.
 f([2,4,5,1,3,1]) = [1,1,2,3,4,5]
@@ -241,9 +226,7 @@ param: list
 return: list
 '''
 def sort(numbers):
-    number_list = list(numbers)
-    lhalf = number_list[:len(number_list)//2]
-    uhalf = number_list[len(number_list)//2:]    
+    print()
 '''
 9. Create an implementation of the rotational cipher, also sometimes called
 the Caesar cipher.

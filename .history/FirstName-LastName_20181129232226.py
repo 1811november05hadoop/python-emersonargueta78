@@ -42,11 +42,6 @@ def main():
     print(acronym('_Portable Network Graphics'))
     print(whichTriangle(1,2,3))
     print(whichTriangle(3,3,3))
-    print(scrabble('cabbage'))
-    print(armstrong(153))
-    print(armstrong(154))
-    print(primeFactors(12))
-    print(pangram('The quick brown fox jumps over the lazy dog.'))
 
 '''
 1. Reverse a String. Example: reverse("example"); -> "elpmaxe"
@@ -135,30 +130,27 @@ def scrabble(word):
     points5 = 5 
     points8 = 8
     points10 = 10
-    scoreOne = ['A', 'E', 'I', 'O', 'U', 'L', 'N', 'R', 'S', 'T']
-    scoreTwo = ['D','G']
-    scoreThree = ['B','C','M','P']
-    scoreFour = ['F', 'H', 'V', 'W', 'Y']
-    scoreFive = 'K'
-    scoreEight = ['J','X']
-    scoreTen = ['Q','Z']
+    scoreOne = {"A", "E", "I", "O", "U", "L", "N", "R", "S", "T"}
+    scoreTwo = {"D","G"}
+    scoreThree = {"B","C","M","P"}
+    scoreFour = {"F", "H", "V", "W", "Y"}
+    scoreFive = "K"
+    scoreEight = {"J","X"}
+    scoreTen = {"Q","Z"}
 
-    totalScore = points5 * ( len( word.upper() ) - len( word.upper().replace(scoreFive,'') ) )
-
-    totalScore += checkScore(word,scoreOne,points1) 
-    totalScore += checkScore(word,scoreTwo,points2) 
-    totalScore += checkScore(word,scoreThree,points3) 
-    totalScore += checkScore(word,scoreFour,points4) 
-    totalScore += checkScore(word,scoreEight,points8) 
-    totalScore += checkScore(word,scoreTen,points10)
+    totalScore = points5*(string.toUpperCase().length() - string.toUpperCase().replaceAll(scoreFive,"").length()); 
     
+    totalScore += checkScore(string,scoreOne,points1) + checkScore(string,scoreTwo,points2) 
+    + checkScore(string,scoreThree,points3) + checkScore(string,scoreFour,points4)
+    + checkScore(string,scoreEight,points8) + checkScore(string,scoreTen,points10)
+				
     return totalScore
-
 def checkScore(string,scoreArr,pointValue):
-    score = 0
-    for i in range(0,len(scoreArr)):
-        score += pointValue*(len(string.upper()) - len(string.upper().replace(scoreArr[i],'')))
-    return score
+	score = 0
+	for i in range(0,len(scoreArr)):
+	    score += pointValue*(string.toUpperCase().length() - string.toUpperCase().replaceAll(scoreArr[i],"").length())
+	return score
+	
 '''
 5. An Armstrong number is a number that is the sum of its own digits each
 raised to the power of the number of digits.
@@ -174,18 +166,8 @@ a number is an Armstrong number.
 param: int
 return: bool
 '''
-def armstrong(number):  
-    digit_list = list(str(number))
-    sum = 0
-    numDigits = len(digit_list)
-
-    for digit in digit_list:
-        sum += int(digit) ** numDigits
-
-    if sum == number:
-        return True
-
-    return False
+def armstrong(number):
+    print()
 '''
 6. Compute the prime factors of a given natural number.
 
@@ -197,18 +179,7 @@ param: int
 return: list
 '''
 def primeFactors(number):
-    primeFactors = []
-
-    if number == 2:	
-        return list(number)
-    for i in range(2,number):
-        while(number%i == 0):
-            primeFactors.append(i)
-            number = number/i
-    if number > 2:
-        primeFactors.append(number)
-    
-    return primeFactors
+    print()
 '''
 7. Determine if a sentence is a pangram. A pangram (Greek: παν γράμμα, pan
 gramma, "every letter") is a sentence using every letter of the alphabet at
@@ -223,12 +194,7 @@ param: str
 return: bool
 '''
 def pangram(sentence):
-    sentence_list = set(sentence.lower())
-    
-    subsetStr0 = {'.' , ' ' , ',' , ','}
-    subsetStr = set('abcdefghijklmnopqrstuvwxyz')
-    
-    return subsetStr.issubset(sentence_list.difference(subsetStr0)) 
+    print()
 '''
 8. Sort list of integers.
 f([2,4,5,1,3,1]) = [1,1,2,3,4,5]
@@ -241,9 +207,7 @@ param: list
 return: list
 '''
 def sort(numbers):
-    number_list = list(numbers)
-    lhalf = number_list[:len(number_list)//2]
-    uhalf = number_list[len(number_list)//2:]    
+    print()
 '''
 9. Create an implementation of the rotational cipher, also sometimes called
 the Caesar cipher.

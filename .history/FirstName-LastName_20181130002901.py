@@ -46,7 +46,7 @@ def main():
     print(armstrong(153))
     print(armstrong(154))
     print(primeFactors(12))
-    print(pangram('The quick brown fox jumps over the lazy dog.'))
+    print(pangram('hello'))
 
 '''
 1. Reverse a String. Example: reverse("example"); -> "elpmaxe"
@@ -223,12 +223,10 @@ param: str
 return: bool
 '''
 def pangram(sentence):
-    sentence_list = set(sentence.lower())
-    
-    subsetStr0 = {'.' , ' ' , ',' , ','}
-    subsetStr = set('abcdefghijklmnopqrstuvwxyz')
-    
-    return subsetStr.issubset(sentence_list.difference(subsetStr0)) 
+    regex = '\\.| |,'
+    subsetStr = '[a-z]'
+    print('hello')
+    sentence.u
 '''
 8. Sort list of integers.
 f([2,4,5,1,3,1]) = [1,1,2,3,4,5]
@@ -241,9 +239,7 @@ param: list
 return: list
 '''
 def sort(numbers):
-    number_list = list(numbers)
-    lhalf = number_list[:len(number_list)//2]
-    uhalf = number_list[len(number_list)//2:]    
+    print()
 '''
 9. Create an implementation of the rotational cipher, also sometimes called
 the Caesar cipher.
