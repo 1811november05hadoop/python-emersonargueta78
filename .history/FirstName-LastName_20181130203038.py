@@ -48,8 +48,7 @@ def main():
     print(primeFactors(12))
     print(pangram('The quick brown fox jumps over the lazy dog.'))
     print(rotate(5,'OMG'))
-    evenAndOdds()
-    print(sort([5,2,3,7,8,9,0,2,2,3,3,7,1]))
+
 '''
 1. Reverse a String. Example: reverse("example") -> "elpmaxe"
 
@@ -243,17 +242,7 @@ param: list
 return: list
 '''
 def sort(numbers):
-    numbers_list = list(numbers)
-    for i in range(0,len(numbers_list)):
-        for j in range(0,len(numbers_list)):
-            if j < len(numbers_list) - 1:
-                if numbers_list[j] > numbers_list[j+1]:
-                    temp = numbers_list[j+1]
-                    numbers_list[j+1] = numbers_list[j]
-                    numbers_list[j] = temp
-    return numbers_list
-
-    
+    print()
 '''
 9. Create an implementation of the rotational cipher, also sometimes called
 the Caesar cipher.
@@ -285,7 +274,7 @@ return: str
 '''
 def rotate(key, string):
     words = list(str(string).split(' ') )
-
+    print(words)
     for i in range(0,len(words)):
         words[i] = rotateWord(words[i],key)
 
@@ -308,6 +297,8 @@ def rotateWord(words, key):
     characters = list(str(words))
 
     for i in range(0,len(characters)):
+        print(i)
+        
         isAlphabetic = characters[i].isalpha()
         isUpperCase = characters[i].isupper()
 
@@ -325,7 +316,7 @@ def rotateWord(words, key):
                 characters[i] = chr((ord(characters[i]) + key)%ord('z')+(ord('a')- 1))
             else:
                 characters[i] = chr(ord(characters[i]) + key)
-    return ''.join(characters)
+    return characters
 '''
 10. Take 10 numbers as input from the user and store all the even numbers in a file called even.txt and
 the odd numbers in a file called odd.txt.
@@ -334,17 +325,7 @@ param: none, from the keyboard
 return: nothing
 '''
 def evenAndOdds():
-    even_file = open('even.txt', 'a')
-    odd_file = open('odd.txt', 'a')
-    for i in range(0,10):
-        print('Enter a number: ')
-        tmp = int(input())
-        if tmp%2 == 0:
-            even_file.write(str(tmp)+',')
-        else:
-            odd_file.write(str(tmp)+',')
-    even_file.close()
-    odd_file.close()
+    print()
 
 if __name__ == "__main__":
     main()

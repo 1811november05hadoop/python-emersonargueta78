@@ -49,7 +49,7 @@ def main():
     print(pangram('The quick brown fox jumps over the lazy dog.'))
     print(rotate(5,'OMG'))
     evenAndOdds()
-    print(sort([5,2,3,7,8,9,0,2,2,3,3,7,1]))
+
 '''
 1. Reverse a String. Example: reverse("example") -> "elpmaxe"
 
@@ -243,17 +243,7 @@ param: list
 return: list
 '''
 def sort(numbers):
-    numbers_list = list(numbers)
-    for i in range(0,len(numbers_list)):
-        for j in range(0,len(numbers_list)):
-            if j < len(numbers_list) - 1:
-                if numbers_list[j] > numbers_list[j+1]:
-                    temp = numbers_list[j+1]
-                    numbers_list[j+1] = numbers_list[j]
-                    numbers_list[j] = temp
-    return numbers_list
-
-    
+    print()
 '''
 9. Create an implementation of the rotational cipher, also sometimes called
 the Caesar cipher.
@@ -343,8 +333,8 @@ def evenAndOdds():
             even_file.write(str(tmp)+',')
         else:
             odd_file.write(str(tmp)+',')
-    even_file.close()
-    odd_file.close()
+    
+    
 
 if __name__ == "__main__":
     main()

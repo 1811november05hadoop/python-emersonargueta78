@@ -246,11 +246,9 @@ def sort(numbers):
     numbers_list = list(numbers)
     for i in range(0,len(numbers_list)):
         for j in range(0,len(numbers_list)):
-            if j < len(numbers_list) - 1:
+            if j < len(numbers_list) -1:
                 if numbers_list[j] > numbers_list[j+1]:
-                    temp = numbers_list[j+1]
                     numbers_list[j+1] = numbers_list[j]
-                    numbers_list[j] = temp
     return numbers_list
 
     
